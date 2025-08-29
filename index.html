@@ -208,11 +208,7 @@
           <div class="content has-text-justified">
             <img src="static/images/overview.png"/>
             <p>
-              The overview of ArtGS. Our method is divided into two stages: (i) obtaining coarse canonical
-              Gaussians \(G^c_{\text{init}}\) by matching the Gaussians \(G^0_{\text{single}}\) and \(G^1_{\text{single}}\) 
-              trained with each single-state individually and
-              initializing the part assignment module with clustered centers, (ii) jointly optimizing canonical Gaussians \(G^c\)
-              and the articulation model (including the articulation parameters \(\Phi\) and the part assignment module).
+              The overview of VideoArtGS. Given video frames, we first use VGGT~\citep{wang2025vggt} to estimate the depths along with camera poses and then use TAPIP3D~\citep{tapip3d} to obtain 3D tracks. We design a motion prior guidance pipeline to analyze and group these tracks, initializing our articulation-based deformation field with motion information and optimizing it with tracking loss. Finally, we reconstruct the object with 3D Gaussians and the deformation field, jointly optimizing both modules by rendering and tracking loss.
             </p>
           </div>
         </div>
@@ -244,12 +240,14 @@
     <div class="container is-max-desktop">
       <div class="has-text-centered">
         <h2 class="title is-3">Simulation in IsaacSim</h2>
+        <h2 class="subtitle">Left: synthetic objects. Right: real-world objects.</h2>
       </div>
       <br><br>
       <video autoplay controls loop muted>
-        <source src="./video/realscan.mp4" type="video/mp4">
+        <source src="./video/isaac.mp4" type="video/mp4">
       </video>
-    </div>
+      <br><br>
+      </div> 
   </div>
 </section>
 
