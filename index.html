@@ -54,14 +54,14 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">VideoArtGS: Building Interactable Replicas of Complex Articulated Objects <br> via Gaussian Splatting</h1>
+          <h1 class="title is-1 publication-title">VideoArtGS: Building Digital Twins of Articulated Objects from Monocular Video</h1>
           
           <div class="is-size-5 publication-authors">
             <!-- Paper authors -->
             <span class="author-block">
-              <a href="https://yuliu-ly.github.io" target="_blank">Yu Liu✶</a><sup>1,2</sup>,</span>
+              <a href="https://yuliu-ly.github.io" target="_blank">Yu Liu</a><sup>1,2</sup>,</span>
             <span class="author-block">
-              <a href="https://buzz-beater.github.io" target="_blank">Baoxiong Jia✶</a><sup>2</sup>,</span>
+              <a href="https://buzz-beater.github.io" target="_blank">Baoxiong Jia</a><sup>2*&dagger;</sup>,</span>
             <span class="author-block">
               <a href="https://github.com/Jason-aplp" target="_blank">Ruijie Lu</a><sup>2,3</sup>,</span>
             <span class="author-block">
@@ -70,14 +70,14 @@
               Huayu Chen<sup>1</sup>,</span>
             <span class="author-block">
               <a href="https://dali-jack.github.io/Junfeng-Ni" target="_blank">Junfeng Ni</a><sup>1,2</sup>,</span>
+            <br>
             <span class="author-block">
               <a href="https://zhusongchun.net" target="_blank">Song-Chun Zhu</a><sup>1,2,3</sup>,</span>
             <span class="author-block">
-              <a href="https://siyuanhuang.com" target="_blank">Siyuan Huang</a><sup>2</sup></span>
+              <a href="https://siyuanhuang.com" target="_blank">Siyuan Huang</a><sup>2&dagger;</sup></span>
           </div>
 
-          <p style="font-size: 0.9em; padding: 0.5em 0;">✶ indicates equal contribution</p>
-
+          <p style="font-size: 0.9em; padding: 0.5em 0;">* Project Lead, <sup>&dagger;</sup> Corresponding Author</p>
           <div class="is-size-6 publication-authors">
             <span class="author-block">
               <sup>1</sup>Tsinghua University &nbsp&nbsp 
@@ -94,7 +94,7 @@
             <div class="publication-links">
               <!-- Arxiv PDF link -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2502.19459" target="_blank"
+                <a href="https://arxiv.org/pdf/" target="_blank"
                 class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-file-pdf"></i>
@@ -105,7 +105,7 @@
               &nbsp&nbsp 
               <!-- ArXiv abstract Link -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2502.19459" target="_blank"
+                <a href="https://arxiv.org/abs/" target="_blank"
                 class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -131,7 +131,7 @@
                   <span class="icon">
                     <i class="fa-solid fa-download"></i>
                   </span>
-                  <span>Data</span>
+                  <span>Data (Coming soon)</span>
                 </a>
               </span>
               
@@ -150,6 +150,13 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Reconstruction from Monocular Video</h2>
+          <h2 class="subtitle">Capturing video with any mobilephone</h2>
+          <div class="content has-text-justified">
+            <video autoplay controls loop muted>
+              <source src="./video/demo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle">More Results</h2>
           <div class="content has-text-justified">
             <video autoplay controls loop muted>
               <source src="./video/realscan.mp4" type="video/mp4">
@@ -172,22 +179,9 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Building articulated objects is a key challenge in computer
-              vision. Existing methods often fail to effectively integrate information across
-              different object states, limiting the accuracy of part-mesh reconstruction and part
-              dynamics modeling, particularly for complex multi-part articulated objects. We
-              introduce ArtGS, a novel approach that leverages 3D Gaussians as a flexible and
-              efficient representation to address these issues. Our method incorporates canonical
-              Gaussians with coarse-to-fine initialization and updates for aligning articulated
-              part information across different object states, and employs a skinning-inspired
-              part dynamics modeling module to improve both part-mesh reconstruction and
-              articulation learning. Extensive experiments on both synthetic and real-world
-              datasets, including a new benchmark for complex multi-part objects, demonstrate
-              that ArtGS achieves state-of-the-art performance in joint parameter estimation
-              and part mesh reconstruction. Our approach significantly improves reconstruction
-              quality and efficiency, especially for multi-part articulated objects. Additionally, we
-              provide comprehensive analyses of our design choices, validating the effectiveness
-              of each component to highlight potential areas for future improvement.
+              Building digital twins of articulated objects from monocular video presents an essential challenge in computer vision, which requires simultaneous reconstruction of object geometry, part segmentation, and articulation parameters from limited viewpoint inputs. Monocular video offers an attractive input format due to its simplicity and scalability; however, it's challenging to disentangle the object geometry and part dynamics with visual supervision alone, as the joint movement of the camera and parts leads to ill-posed estimation. While motion priors from pre-trained tracking models can alleviate the issue, how to effectively integrate them for articulation learning remains largely unexplored.
+To address this problem, we introduce VideoArtGS, a novel approach that reconstructs high-fidelity digital twins of articulated objects from monocular video. We propose a motion prior guidance pipeline that analyzes 3D tracks, filters noise, and provides reliable initialization of articulation parameters. We also design a hybrid center-grid part assignment module for articulation-based deformation fields that captures accurate part motion. 
+VideoArtGS demonstrates state-of-the-art performance in articulation and mesh reconstruction, reducing the reconstruction error by about <b>two orders of magnitude</b> compared to existing methods. VideoArtGS enables practical digital twin creation from monocular video, establishing a new benchmark for video-based articulated object reconstruction. 
             </p>
           </div>
         </div>
@@ -208,7 +202,7 @@
           <div class="content has-text-justified">
             <img src="static/images/overview.png"/>
             <p>
-              The overview of VideoArtGS. Given video frames, we first use VGGT~\citep{wang2025vggt} to estimate the depths along with camera poses and then use TAPIP3D~\citep{tapip3d} to obtain 3D tracks. We design a motion prior guidance pipeline to analyze and group these tracks, initializing our articulation-based deformation field with motion information and optimizing it with tracking loss. Finally, we reconstruct the object with 3D Gaussians and the deformation field, jointly optimizing both modules by rendering and tracking loss.
+              The overview of VideoArtGS. Given video frames, we first use VGGT to estimate the depths along with camera poses and then use TAPIP3D to obtain 3D tracks. We design a motion prior guidance pipeline to analyze and group these tracks, initializing our articulation-based deformation field with motion information and optimizing it with tracking loss. Finally, we reconstruct the object with 3D Gaussians and the deformation field, jointly optimizing both modules by rendering and tracking loss.
             </p>
           </div>
         </div>
